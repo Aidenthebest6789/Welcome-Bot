@@ -29,9 +29,9 @@ module.exports = {
     async execute(client) {
         console.log(`✅ Logged in as ${client.user.tag}`);
 
-        console.log(`🚀 Version :  v1.2 
+        console.log(`🚀 Version :  recent version
 📅 ${new Date().toLocaleString()}
-💻 Developed by: GlaceYT`);
+💻 Developed by: HexaBot welcome`);
         async function updateStatus() {
             const totalUsers = client.guilds.cache.reduce((acc, guild) => acc + guild.memberCount, 0);
             const totalServers = client.guilds.cache.size;
@@ -48,7 +48,7 @@ module.exports = {
                     statusMessage = config.customStatus || "/help";
                     break;
                 default:
-                    statusMessage = "🚀 Running smooth!";
+                    statusMessage = "Join discord.gg/qAE9FaPTwu";
             }
 
             client.user.setActivity(statusMessage, { type: config.statusType });
@@ -58,10 +58,10 @@ module.exports = {
 
 
         if (config.statusType === ActivityType.Streaming) {
-            if (config.streamingURL && config.streamingURL.startsWith("https://www.twitch.tv/")) {
+            if (config.streamingURL && config.streamingURL.startsWith("discord.gg/qAE9FaPTwu")) {
                 activityOptions.url = config.streamingURL;
             } else {
-                console.warn("⚠ Invalid streaming URL! Must be a valid Twitch URL.");
+                console.warn("⚠ Invalid streaming URL! Must be a valid Discord URL.");
                 activityOptions.type = ActivityType.Playing;
             }
         }
